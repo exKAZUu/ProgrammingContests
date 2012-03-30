@@ -16,8 +16,24 @@
 
 #endregion
 
-namespace POJ {
-	internal class Program {
-		private static void Main(string[] args) {}
+using System;
+using System.IO;
+using System.Linq;
+
+namespace Codeforces.Codeforces114 {
+	internal class ProblemA {
+		//private static void Main(string[] args) {
+		//    new ProblemA().Solve(Console.In);
+		//}
+
+		private void Solve(TextReader input) {
+			var nxy = input.ReadLine().Split(' ').Select(int.Parse).ToList();
+			var n = nxy[0];
+			var x = nxy[1];
+			var y = nxy[2];
+
+			var need = (int)Math.Ceiling(n * y / 100.0) - x;
+			Console.WriteLine(need > 0 ? need : 0);
+		}
 	}
 }

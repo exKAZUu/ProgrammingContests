@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Kujibiki8 {
 
 	public static void main(String[] args) {
-		ArrayList<Integer> numbers = new ArrayList<>();
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
 		int m = 10;
 		boolean ans = solve(numbers, m);
 		System.out.println(ans ? "Yes" : "No");

@@ -16,8 +16,29 @@
 
 #endregion
 
-namespace POJ {
-	internal class Program {
-		private static void Main(string[] args) {}
+using System;
+using System.IO;
+
+namespace Codeforces {
+	public class ProblemE {
+		//public static void Main(string[] args) {
+		//    new ProblemE().Solve(Console.In);
+		//}
+
+		private void Solve(TextReader input) {
+			//1:  0,  1
+			//2:  3,  2 = 1 * 3, 0 + 1 * 2
+			//3:  6,  7 = 2 * 3, 3 + 2 * 2
+			//4: 21, 20 = 7 * 3, 6 + 7 * 2
+			var n = int.Parse(input.ReadLine()) - 1;
+			var d = 0L;
+			var notD = 1L;
+			for (int i = 0; i < n; i++) {
+				var newD = notD * 3 % 1000000007;
+				notD = (d + notD * 2) % 1000000007;
+				d = newD;
+			}
+			Console.WriteLine(d);
+		}
 	}
 }
