@@ -22,60 +22,84 @@ using System.IO;
 using System.Linq;
 
 namespace Codeforces {
-	internal class Shoes {
+	internal class Shoe {
 		public int Price { get; set; }
 		public int Size { get; set; }
+		public int Index { get; set; }
+		public List<Customer> Customers { get; set; }
+
+		public Shoe() {
+			Customers = new List<Customer>(2);
+		}
 	}
 
 	internal class Customer {
 		public int Money { get; set; }
 		public int Feet { get; set; }
+		public Shoe BoughtShoe { get; set; }
 	}
 
 	public class ProblemD {
-		private List<Customer> customers;
-		private List<Shoes> shoes;
-
-		//public static void Main(string[] args) {
-		//    new ProblemD().Solve(Console.In);
-		//}
-
-		private void Solve(TextReader input) {
-			var nShoes = int.Parse(input.ReadLine());
-			shoes = Enumerable.Range(0, nShoes)
-					.Select(_ => input.ReadLine().Split(' ').Select(int.Parse).ToList())
-					.Select(cs => new Shoes { Price = cs[0], Size = cs[1] })
-					.OrderBy(s => s.Size)
-					.ToList();
-			var nCustomers = int.Parse(input.ReadLine());
-			customers = Enumerable.Range(0, nCustomers)
-					.Select(_ => input.ReadLine().Split(' ').Select(int.Parse).ToList())
-					.Select(dl => new Customer { Money = dl[0], Feet = dl[1] })
-					.OrderBy(c => c.Feet)
-					.ToList();
-			Console.WriteLine(DepthFirstSearch(0, 0, 0));
+		public static void Main(string[] args) {
+			new ProblemD().Solve(Console.In);
 		}
 
-		private int DepthFirstSearch(int iShoes, int iCustomers, int sum) {
-			if (iShoes >= shoes.Count || iCustomers >= customers.Count) {
-				return sum;
-			}
-
-			var diff = customers[iCustomers].Feet - shoes[iShoes].Size;
-			if (diff < 0) {
-				return DepthFirstSearch(iShoes, iCustomers + 1, sum);
-			}
-			if (diff == 0 || diff == 1) {
-				var ret = DepthFirstSearch(iShoes, iCustomers + 1, sum);
-				if (shoes[iShoes].Price <= customers[iCustomers].Money) {
-					ret = Math.Max(
-							ret, DepthFirstSearch(
-									iShoes + 1, iCustomers + 1,
-									sum + shoes[iShoes].Price));
+		public void Solve(TextReader input) {
+			var nShoes = int.Parse(input.ReadLine());
+			var shoes =
+					Enumerable.Range(0, nShoes)
+							.Select(_ => input.ReadLine().Split(' ').Select(int.Parse).ToList())
+							.Select((cs, i) => new Shoe { Price = cs[0], Size = cs[1], Index = i })
+							.ToDictionary(s => s.Size);
+			var nCustomers = int.Parse(input.ReadLine());
+			var customers = Enumerable.Range(0, nCustomers)
+					.Select(_ => input.ReadLine().Split(' ').Select(int.Parse).ToList())
+					.Select(
+							(dl, i) =>
+							new Customer { Money = dl[0], Feet = dl[1] })
+					.ToList();
+			foreach (var customer in customers) {
+				Shoe shoe;
+				if (shoes.TryGetValue(customer.Feet, out shoe) &&
+				    customer.Money >= shoe.Price) {
+					shoe.Customers.Add(customer);
 				}
-				return ret;
+				if (shoes.TryGetValue(customer.Feet + 1, out shoe) &&
+				    customer.Money >= shoe.Price) {
+					shoe.Customers.Add(customer);
+				}
 			}
-			return DepthFirstSearch(iShoes + 1, iCustomers, sum);
+			long money = 0;
+			var count = 0;
+			foreach (var shoe in shoes.Values.OrderByDescending(s => s.Price)) {
+				if (SearchGreedy(shoe)) {
+					money += shoe.Price;
+					count++;
+				}
+			}
+			Console.WriteLine(money);
+			Console.WriteLine(count);
+			for (int i = 0; i < customers.Count; i++) {
+				var shoe = customers[i].BoughtShoe;
+				if (shoe != null) {
+					Console.WriteLine((i + 1) + " " + (shoe.Index + 1));
+				}
+			}
+		}
+
+		private bool SearchGreedy(Shoe shoe) {
+			foreach (var customer in shoe.Customers) {
+				var otherShoe = customer.BoughtShoe;
+				if (otherShoe == null) {
+					customer.BoughtShoe = shoe;
+					return true;
+				}
+				if (shoe != otherShoe && SearchGreedy(otherShoe)) {
+					customer.BoughtShoe = shoe;
+					return true;
+				}
+			}
+			return false;
 		}
 	}
 }

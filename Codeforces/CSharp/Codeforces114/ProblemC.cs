@@ -17,14 +17,15 @@
 #endregion
 
 using System;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 
 namespace Codeforces.Codeforces114 {
 	internal class ProblemC {
-		private static void Main(string[] args) {
-			new ProblemC().Solve(Console.In);
-		}
+		//private static void Main(string[] args) {
+		//    new ProblemC().Solve(Console.In);
+		//}
 
 		private void Solve(TextReader input) {
 			var nad = input.ReadLine().Split(' ').Select(int.Parse).ToList();
@@ -51,7 +52,8 @@ namespace Codeforces.Codeforces114 {
 				if (lastTime <= time) {
 					lastTime = time;
 				}
-				Console.WriteLine(lastTime);
+				Console.WriteLine(
+						lastTime.ToString(new CultureInfo("ja-JP", false)));
 			}
 		}
 	}
