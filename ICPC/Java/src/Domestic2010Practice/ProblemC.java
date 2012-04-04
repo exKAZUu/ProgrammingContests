@@ -1,7 +1,6 @@
 package Domestic2010Practice;
 
 import java.io.InputStream;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ProblemC {
@@ -18,12 +17,11 @@ public class ProblemC {
 			if (N == 0 && M == 0) {
 				break;
 			}
-			
+
 			int[] book = new int[M];
 			for (int i = 0; i < M; i++) {
 				book[i] = sc.nextInt();
 			}
-			Arrays.sort(book);
 			int[] input = new int[N];
 			for (int i = 0; i < N; i++) {
 				input[i] = sc.nextInt();
@@ -34,6 +32,7 @@ public class ProblemC {
 				dp[i] = Integer.MAX_VALUE;
 			}
 			dp[128] = 0;
+
 			for (int code : input) {
 				int[] newdp = new int[256];
 				for (int i = 0; i < newdp.length; i++) {
