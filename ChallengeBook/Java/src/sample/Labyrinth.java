@@ -3,7 +3,6 @@ package sample;
 import java.awt.Point;
 import java.io.InputStream;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 public class Labyrinth {
 
@@ -20,7 +19,6 @@ public class Labyrinth {
 	}
 
 	private void solve(InputStream in) {
-		Scanner sc = new Scanner(in);
 		while (true) {
 			for (int x = 0; x < N; x++) {
 				for (int y = 0; y < M; y++) {
@@ -28,6 +26,7 @@ public class Labyrinth {
 				}
 			}
 			int ans = bfs();
+			System.out.println(ans);
 		}
 	}
 

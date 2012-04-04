@@ -3,7 +3,7 @@ package sample;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class Napzak {
+public class Knapsack {
 
 	private int n;
 	private int w;
@@ -11,7 +11,7 @@ public class Napzak {
 	private int[] values;
 
 	public static void main(String[] args) {
-		new Napzak().solve(System.in);
+		new Knapsack().solve(System.in);
 	}
 
 	private void solve(InputStream in) {
@@ -38,6 +38,8 @@ public class Napzak {
 
 			dp = new int[n + 1][w + 1];
 			ans = solveDp1();
+
+			System.out.println(ans);
 		}
 	}
 
