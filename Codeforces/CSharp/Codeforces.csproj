@@ -50,6 +50,9 @@
     <Compile Include="Codeforces113\ProblemE.cs" />
     <Compile Include="Codeforces113\ProblemA.cs" />
     <Compile Include="Codeforces113\ProblemC.cs" />
+    <Compile Include="CrocChamp2012\ProblemC.cs" />
+    <Compile Include="CrocChamp2012\ProblemB.cs" />
+    <Compile Include="CrocChamp2012\ProblemA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

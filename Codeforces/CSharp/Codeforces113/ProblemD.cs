@@ -40,9 +40,9 @@ namespace Codeforces {
 	}
 
 	public class ProblemD {
-		public static void Main(string[] args) {
-			new ProblemD().Solve(Console.In);
-		}
+		//public static void Main(string[] args) {
+		//    new ProblemD().Solve(Console.In);
+		//}
 
 		public void Solve(TextReader input) {
 			var nShoes = int.Parse(input.ReadLine());
