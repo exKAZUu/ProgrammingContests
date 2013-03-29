@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Paraiba.Experiment</id>
+    <version>1.0.2.34</version>
+    <title>Paraiba.Experiment</title>
+    <authors>Kazunori Sakamoto</authors>
+    <owners>Kazunori Sakamoto</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://github.com/exKAZUu/Paraiba</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The experimental library of Paraiba that is not well tested.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright (C) Kazunori Sakamoto 2011-2012</copyright>
+    <tags>.NET Library LINQ</tags>
+    <dependencies>
+      <dependency id="Paraiba" version="1.0.3.58" />
+    </dependencies>
+  </metadata>
+</package>

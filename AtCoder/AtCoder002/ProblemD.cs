@@ -58,9 +58,9 @@ namespace AtCoder.AtCoder002 {
 	}
 
 	internal class ProblemD {
-		private static void Main(string[] args) {
-			new ProblemD().Solve(Console.In);
-		}
+		//private static void Main(string[] args) {
+		//    new ProblemD().Solve(Console.In);
+		//}
 
 		private const int margin = 3;
 

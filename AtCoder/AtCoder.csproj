@@ -34,8 +34,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Paraiba">
+      <HintPath>..\packages\Paraiba.1.0.3.58\lib\net40\Paraiba.dll</HintPath>
+    </Reference>
+    <Reference Include="Paraiba.Experiment">
+      <HintPath>..\packages\Paraiba.Experiment.1.0.2.34\lib\net40\Paraiba.Experiment.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,7 +54,17 @@
     <Compile Include="AtCoder002\ProblemC.cs" />
     <Compile Include="AtCoder002\ProblemB.cs" />
     <Compile Include="AtCoder002\ProblemA.cs" />
+    <Compile Include="AtCoder009\ProblemA.cs" />
+    <Compile Include="AtCoder009\ProblemB.cs" />
+    <Compile Include="AtCoder009\ProblemC.cs" />
+    <Compile Include="AtCoder009\ProblemD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TenkaichiA\ProblemC.cs" />
+    <Compile Include="TenkaichiA\ProblemB.cs" />
+    <Compile Include="TenkaichiA\ProblemA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

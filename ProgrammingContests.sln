@@ -11,9 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeforces", "Codeforces\CS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoForIt2011", "GoForIt2011\CSharp\GoForIt2011.csproj", "{B0D5CF28-A818-4C46-A2B1-3E234F8642E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeforces.Tests", "Codeforces.Tests\Codeforces.Tests.csproj", "{E1D7262C-E256-4DAF-A68D-A7DD3D85D781}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeforces.Tests", "Codeforces\CSharp.Tests\Codeforces.Tests.csproj", "{E1D7262C-E256-4DAF-A68D-A7DD3D85D781}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtCoder", "AtCoder\AtCoder.csproj", "{933BB6F2-9A7B-480F-AE3E-63D319D097FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleCodeJam", "GoogleCodeJam\GoogleCodeJam.csproj", "{C0CC1225-B74D-4974-B39F-B4CC34E84B3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,16 @@ Global
 		{933BB6F2-9A7B-480F-AE3E-63D319D097FC}.Release|Mixed Platforms.Build.0 = Release|x86
 		{933BB6F2-9A7B-480F-AE3E-63D319D097FC}.Release|x86.ActiveCfg = Release|x86
 		{933BB6F2-9A7B-480F-AE3E-63D319D097FC}.Release|x86.Build.0 = Release|x86
+		{C0CC1225-B74D-4974-B39F-B4CC34E84B3E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C0CC1225-B74D-4974-B39F-B4CC34E84B3E}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{C0CC1225-B74D-4974-B39F-B4CC34E84B3E}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{C0CC1225-B74D-4974-B39F-B4CC34E84B3E}.Debug|x86.ActiveCfg = Debug|x86
+		{C0CC1225-B74D-4974-B39F-B4CC34E84B3E}.Debug|x86.Build.0 = Debug|x86
+		{C0CC1225-B74D-4974-B39F-B4CC34E84B3E}.Release|Any CPU.ActiveCfg = Release|x86
+		{C0CC1225-B74D-4974-B39F-B4CC34E84B3E}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{C0CC1225-B74D-4974-B39F-B4CC34E84B3E}.Release|Mixed Platforms.Build.0 = Release|x86
+		{C0CC1225-B74D-4974-B39F-B4CC34E84B3E}.Release|x86.ActiveCfg = Release|x86
+		{C0CC1225-B74D-4974-B39F-B4CC34E84B3E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
